@@ -1,0 +1,19 @@
+.wrapper {
+  height: 100px;
+  background-color: #553772;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.img {
+  height: 50px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.filter {
+  height: 20px;
+}
