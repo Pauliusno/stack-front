@@ -1,21 +1,29 @@
 import React from "react";
-import styles from "./styles.module.css";
 import Question from "../Question/Question";
 
-type QuestionsType = {
-  questions: Array<any> | null;
+type QuestionType = {
+  _id: string;
+  title: string;
+  date: string;
+  text: string;
+  answered: string[];
 };
 
-const Questions: React.FC<QuestionsType> = ({ questions }) => {
+type QuestionsType = {
+  questions: Array<QuestionType> | null;
+  onDelete: (questionId: string) => Promise<void>;
+};
+
+const Questions: React.FC<QuestionsType> = ({ questions, onDelete }) => {
   return (
-    //Questions gauna propsa questions lygu Array<any> | null;, questions ismapina
-    <div className={styles.wrapper}>
+    <div>
       {questions &&
         questions.map((question) => (
-          // questions array kievienam question sukuria div  ir mapina
           <div key={question._id}>
-            <Question question={question} />
-            {/* rendirinam Question komponenta ir question komponenta, kuris turi data  */}
+            <Question
+              question={question}
+              onDelete={() => onDelete(question._id)}
+            />
           </div>
         ))}
     </div>

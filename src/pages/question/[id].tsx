@@ -1,4 +1,3 @@
-// [id].tsx
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -7,6 +6,7 @@ import styles from "./styles.module.css";
 import PageTemplate from "@/PageTemplate/PageTempate";
 import QuestionComponent from "@/Components/Question/Question";
 import Answers from "@/Components/Answers/Answers";
+import AddAnswer from "@/Components/AddAnswer/Answer";
 
 type QuestionType = {
   _id: string;
@@ -40,6 +40,7 @@ const SingleQuestionPage = () => {
       {question && (
         <>
           <QuestionComponent question={question} />
+          <AddAnswer />
           <Answers answers={question.question_answers} />
         </>
       )}

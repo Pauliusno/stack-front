@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import cookie from "js-cookie";
-import { useRouter } from "next/router";
-
-// import Expenses from "@/components/Expenses/Expenses";
-// import PageTemplate from "@/components/PageTemplate/PageTemplate";
-import Header from "@/Components/Header/Header";
-import Footer from "@/Components/Footer/Footer";
 import PageTemplate from "@/PageTemplate/PageTempate";
 import Questions from "../Components/Questions/Questions";
+import cookie from "js-cookie";
 
 export default function Home() {
   const fetchQuestions = async () => {
     try {
       const response = await axios.get(`http://localhost:4000/questions`);
-      setQuestions(response.data.questions); // Log the response data
+      setQuestions(response.data.questions);
     } catch (err) {
       console.error("Error fetching questions:", err);
       if (err.response && err.response.status === 401) {
@@ -23,17 +17,37 @@ export default function Home() {
     }
   };
 
+  const handleDelete = async (questionId: string) => {
+    try {
+      const headers = {
+        authorization: cookie.get("jwt_token"),
+      };
+
+      const response = await axios.delete(
+        `http://localhost:4000/question/${questionId}`,
+        {
+          headers,
+        }
+      );
+
+      if (response.status === 200) {
+        // Reload the questions after successful deletion
+        fetchQuestions();
+      }
+    } catch (err) {
+      console.error("Error deleting question:", err);
+    }
+  };
+
   useEffect(() => {
     fetchQuestions();
   }, []);
+
   const [questions, setQuestions] = useState<Array<any> | null>(null);
+
   return (
-    <>
-      <PageTemplate>
-        <Questions questions={questions} />
-        {/* tam kad iskviest question komponenta jam reikia paduoti propsa su reiksmem question */}
-      </PageTemplate>
-      <Footer />
-    </>
+    <PageTemplate>
+      <Questions questions={questions} onDelete={handleDelete} />
+    </PageTemplate>
   );
 }
