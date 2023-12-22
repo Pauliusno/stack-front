@@ -1,6 +1,5 @@
-// Modal.tsx
 import React, { ReactNode } from "react";
-import styles from "./Modal.module.css"; // Import your modal styles
+import styles from "./Modal.module.css";
 
 interface ModalProps {
   isOpen: boolean;

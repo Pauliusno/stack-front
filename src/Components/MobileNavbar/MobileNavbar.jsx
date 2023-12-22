@@ -9,13 +9,10 @@ const MobileNavbar = ({ isActive }) => {
   const router = useRouter();
 
   const handleLogout = () => {
-    // Remove the token from the cookie
     cookie.remove("jwt_token");
-
-    // Log a message to indicate that the user has logged out
+    t;
     console.log("User logged out");
 
-    // Redirect to the login page
     router.push("/login");
   };
 

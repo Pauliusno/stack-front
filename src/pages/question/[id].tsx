@@ -1,4 +1,3 @@
-// SingleQuestionPage.tsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import cookie from "js-cookie";
@@ -31,7 +30,7 @@ const SingleQuestionPage = () => {
   const [showDeleteAnswerModal, setShowDeleteAnswerModal] = useState(false);
   const [answerIdToDelete, setAnswerIdToDelete] = useState<string | null>(null);
   const [isAuthorized, setIsAuthorized] = useState(false);
-  const [unauthorizedMessage, setUnauthorizedMessage] = useState(""); // New state for unauthorized message
+  const [unauthorizedMessage, setUnauthorizedMessage] = useState("");
   const router = useRouter();
 
   const fetchQuestion = async (id: string) => {
@@ -50,7 +49,6 @@ const SingleQuestionPage = () => {
 
   const handleDeleteQuestion = async () => {
     if (!isAuthorized) {
-      // Set unauthorized message
       setUnauthorizedMessage("Unauthorized access. Please log in.");
       return;
     }
@@ -80,7 +78,6 @@ const SingleQuestionPage = () => {
 
   const handleDeleteAnswer = async () => {
     if (!isAuthorized || !answerIdToDelete) {
-      // Set unauthorized message
       setUnauthorizedMessage("Unauthorized access or missing answerId.");
       return;
     }

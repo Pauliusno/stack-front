@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import cookie from "js-cookie";
-import { useRouter } from "next/router";
-
-// import Expenses from "@/components/Expenses/Expenses";
-// import PageTemplate from "@/components/PageTemplate/PageTemplate";
-import Header from "@/Components/Header/Header";
-import Footer from "@/Components/Footer/Footer";
 import PageTemplate from "@/PageTemplate/PageTempate";
 import Questions from "@/Components/Questions/Questions";
 

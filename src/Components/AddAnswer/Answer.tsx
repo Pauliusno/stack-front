@@ -61,7 +61,7 @@ const AddAnswer: React.FC = () => {
         setTimeout(() => {
           setSuccess(false);
           setCountdown(null);
-          // Refresh the page after adding the answer
+
           window.location.reload();
         }, 3000);
       }

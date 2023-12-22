@@ -1,11 +1,10 @@
-// Home.tsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PageTemplate from "@/PageTemplate/PageTempate";
 import Questions from "../Components/Questions/Questions";
 import cookie from "js-cookie";
 import { useRouter } from "next/router";
-import Modal from "../Components/Modal/Modal"; // Import your Modal component
+import Modal from "../Components/Modal/Modal";
 
 export default function Home() {
   const router = useRouter();
@@ -17,20 +16,19 @@ export default function Home() {
     } catch (err) {
       console.error("Error fetching questions:", err);
       if (err.response && err.response.status === 401) {
-        setUnauthorized(true); // Set unauthorized state to true
+        setUnauthorized(true); // uzsetiman i kad suveiktu
       }
     }
   };
 
   const [showModal, setShowModal] = useState(false);
   const [questionIdToDelete, setQuestionIdToDelete] = useState("");
-  const [unauthorized, setUnauthorized] = useState(false); // New state for unauthorized message
+  const [unauthorized, setUnauthorized] = useState(false);
 
   const handleDeleteClick = (questionId: string) => {
     const jwtToken = cookie.get("jwt_token");
 
     if (!jwtToken) {
-      // If there is no token, set unauthorized state to true
       setUnauthorized(true);
       return;
     }
@@ -55,7 +53,7 @@ export default function Home() {
       );
 
       if (response.status === 200) {
-        // Reload the questions after successful deletion
+        // reloadina po sekmingo isdelete
         fetchQuestions();
       }
     } catch (err) {
@@ -78,7 +76,7 @@ export default function Home() {
       <Questions
         questions={questions}
         onDelete={handleDeleteClick}
-        unauthorized={unauthorized} // Pass unauthorized state as a prop
+        unauthorized={unauthorized}
         className="custom-styles"
       />
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-type CustomButtonProps = {
+type CustomButtonType = {
   onClick: () => void;
   disabled?: boolean;
   success?: boolean;
@@ -9,7 +9,7 @@ type CustomButtonProps = {
   redirectingText?: string;
 };
 
-const CustomButton: React.FC<CustomButtonProps> = ({
+const CustomButton: React.FC<CustomButtonType> = ({
   onClick,
   disabled,
   success,
@@ -30,10 +30,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
         }
       }, 1000);
 
-      // Clear the interval when countdown reaches 0
       setTimeout(() => {
         clearInterval(timer);
-        setDisplayText(redirectingText); // Display the final redirecting text
+        setDisplayText(redirectingText);
       }, countdown * 1000);
 
       return () => {

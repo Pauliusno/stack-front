@@ -3,16 +3,16 @@ import styles from "./styles.module.css";
 import Answer from "../Answer/Answer";
 
 type AnswerType = {
-  id: string; // Change _id to id
+  id: string;
   answer_text: string;
   date: string;
   gained_likes: number;
-  onDelete: () => void; // Add onDelete prop
+  onDelete: () => void;
 };
 
 type AnswersType = {
   answers: AnswerType[];
-  onAnswerDelete: (answerId: string) => void; // Add onAnswerDelete prop
+  onAnswerDelete: (answerId: string) => void;
 };
 
 const Answers: React.FC<AnswersType> = ({ answers, onAnswerDelete }) => {
@@ -23,7 +23,6 @@ const Answers: React.FC<AnswersType> = ({ answers, onAnswerDelete }) => {
       {answers.map((answer) => (
         <div key={answer.id}>
           {" "}
-          {/* Change _id to id */}
           <Answer answer={answer} onDelete={() => onAnswerDelete(answer.id)} />
         </div>
       ))}

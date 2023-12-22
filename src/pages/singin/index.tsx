@@ -1,4 +1,3 @@
-// SignIn.tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -22,18 +21,15 @@ const SignIn: React.FC = () => {
   const validateInputs = (): boolean => {
     const validationErrors: string[] = [];
 
-    // Validate name length
     if (name.length < 3) {
       validationErrors.push("Name must be at least 3 characters long");
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       validationErrors.push("Please enter a valid email address");
     }
 
-    // Validate password complexity
     if (password.length < 6 || !/\d/.test(password)) {
       validationErrors.push(
         "Password must be at least 6 characters long and include a number"
@@ -97,8 +93,8 @@ const SignIn: React.FC = () => {
 
         <CustomButton
           onClick={onSignIn}
-          disabled={success} // Disable the button during redirecting (success state)
-          success={success} // In SignIn, it's in a success state when successful signup
+          disabled={success} //disablinan buttona, kad nesidubliuotu answer,kai redirectina
+          success={success} // kai pavyksta prisijungti perduodam success
           buttonText="Sign In"
           redirectingText="Redirecting to Login..."
           countdown={countdown}
