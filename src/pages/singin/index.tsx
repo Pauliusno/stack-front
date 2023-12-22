@@ -27,11 +27,11 @@ const SignIn: React.FC = () => {
       validationErrors.push("Name must be at least 3 characters long");
     }
 
-    // // Validate email format
-    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // if (!emailRegex.test(email)) {
-    //   validationErrors.push("Please enter a valid email address");
-    // }
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      validationErrors.push("Please enter a valid email address");
+    }
 
     // Validate password complexity
     if (password.length < 6 || !/\d/.test(password)) {

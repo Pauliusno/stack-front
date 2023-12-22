@@ -1,0 +1,52 @@
+/* filter.module.css */
+.filterNav {
+  display: none;
+}
+
+.filterButton {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.filterIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+.filterNav {
+  display: inline-block;
+  position: absolute;
+  background-color: rgb(170, 230, 190);
+  top: 100px;
+  left: -100%;
+  height: 80vh;
+  width: 100%;
+  transition: 1s;
+}
+
+.filterNav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  padding: 0;
+  margin-top: 4rem;
+}
+
+.filterNav ul li a {
+  text-decoration: none;
+  color: rgb(9, 11, 12);
+}
+
+.active {
+  left: 0;
+}

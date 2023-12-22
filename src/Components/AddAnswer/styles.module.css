@@ -1,11 +1,12 @@
 .form {
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1rem;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .form input {
@@ -14,6 +15,7 @@
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .form button {
@@ -29,4 +31,8 @@
 
 .form button:hover {
   background-color: #45a049;
+}
+
+.title {
+  padding-left: 2rem;
 }

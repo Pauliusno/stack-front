@@ -13,9 +13,7 @@ import Questions from "@/Components/Questions/Questions";
 export default function Home() {
   const fetchQuestions = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:4000/questions-without-answers`
-      );
+      const response = await axios.get(`http://localhost:4000/unanswered`);
       setQuestions(response.data.questions); // Log the response data
     } catch (err) {
       console.error("Error fetching questions:", err);

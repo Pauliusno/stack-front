@@ -37,6 +37,13 @@ const AddQuestion: React.FC = () => {
       return;
     }
 
+    const token = cookie.get("jwt_token");
+
+    if (!token) {
+      setError("Unauthorized: Please log in to add a question.");
+      return;
+    }
+
     try {
       const body = {
         title: title,
@@ -44,7 +51,7 @@ const AddQuestion: React.FC = () => {
       };
 
       const headers = {
-        authorization: cookie.get("jwt_token"),
+        authorization: token,
       };
 
       const response = await axios.post(

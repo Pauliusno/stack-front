@@ -1,0 +1,56 @@
+.wrapper {
+  height: 100px;
+  background-color: rgb(43, 226, 119);
+  color: rgb(10, 3, 3);
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  align-items: center;
+}
+
+.burgerButton {
+  fill: rgb(24, 20, 20);
+  cursor: pointer;
+}
+
+.burgerButtonStyle {
+  margin-top: 1rem;
+  all: unset;
+  display: none;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .burgerButtonStyle {
+    display: inline-block;
+  }
+}
+
+.img {
+  height: 50px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.filter {
+  height: 20px;
+  padding-top: px;
+}
+.filterButton {
+  all: unset;
+}
+
+.filterIcon {
+  height: 30px;
+  padding-top: 1rem;
+  cursor: pointer;
+}

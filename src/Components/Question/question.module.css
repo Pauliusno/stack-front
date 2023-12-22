@@ -1,15 +1,16 @@
 .wrapper {
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px rgb(211, 211, 211) solid;
   width: 80%;
   margin: auto;
   background-color: rgb(230, 217, 242);
-  border-radius: 4px;
+  border-radius: 12px;
   box-shadow: 10px 10px 35px 3px rgba(0, 0, 0, 0.82);
   -webkit-box-shadow: 10px 10px 35px 3px rgba(0, 0, 0, 0.82);
   -moz-box-shadow: 10px 10px 35px 3px rgba(0, 0, 0, 0.82);
   cursor: pointer;
   transition: 0.3s;
+  margin-top: 1rem;
 }
 
 .wrapper:hover {
@@ -26,4 +27,20 @@
 .link {
   text-decoration: none;
   color: rgb(39, 39, 39);
+}
+
+.button {
+  all: unset;
+  background-color: #ff5757; /* Red color for delete button */
+  color: #fff; /* White text color */
+  padding: 8px 16px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 0.5rem;
+}
+
+.button:hover {
+  background-color: #e04141; /* Darker red on hover */
 }

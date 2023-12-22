@@ -30,3 +30,7 @@
 .form button:hover {
   background-color: #45a049;
 }
+
+.title {
+  padding-left: 1rem;
+}

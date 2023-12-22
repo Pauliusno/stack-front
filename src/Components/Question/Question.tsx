@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./styles.module.css";
+import styles from "./question.module.css";
 
 type QuestionType = {
   _id: string;
@@ -18,7 +18,7 @@ type QuestionComponentType = {
 const Question: React.FC<QuestionComponentType> = ({ question, onDelete }) => {
   return (
     <div className={styles.wrapper}>
-      <Link href={`/question/${question._id}`}>
+      <Link className={styles.link} href={`/question/${question._id}`}>
         <h2>{question.title}</h2>
         <div className={styles.cardTextContents}>
           <h3>{question.text}</h3>
@@ -28,7 +28,7 @@ const Question: React.FC<QuestionComponentType> = ({ question, onDelete }) => {
           </div>
         </div>
       </Link>
-      <button onClick={onDelete} className={styles.deleteButton}>
+      <button onClick={onDelete} className={styles.button}>
         Delete
       </button>
     </div>
